@@ -2,7 +2,7 @@ const display = (taskLists, tasksContainer) => {
   const sortedTodos = taskLists.list.sort((a, b) => a.index - b.index);
   tasksContainer.innerHTML = '';
   let todosHtml = '';
-  sortedTodos.forEach(({id, description, completed}) => {
+  sortedTodos.forEach(({ id, description, completed }) => {
     const checkedTodo = completed ? 'checked' : '';
     const checkClass = completed ? 'checked' : '';
     todosHtml += `  <div class="task-item">
@@ -14,7 +14,6 @@ const display = (taskLists, tasksContainer) => {
                           </div>
           `;
   });
-
   tasksContainer.innerHTML = todosHtml;
 
   // remove task 
