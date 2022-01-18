@@ -16,7 +16,7 @@ const display = (taskLists, tasksContainer) => {
   });
   tasksContainer.innerHTML = todosHtml;
 
-  // remove task 
+  // remove task
   const removeBtns = document.querySelectorAll('.remove-btn');
   removeBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
