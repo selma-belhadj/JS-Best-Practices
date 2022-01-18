@@ -484,15 +484,15 @@ const display = (taskLists, tasksContainer) => {
   const sortedTodos = taskLists.list.sort((a, b) => a.index - b.index);
   tasksContainer.innerHTML = '';
   let todosHtml = '';
-  sortedTodos.forEach((task) => {
-    const checkedTodo = task.completed ? 'checked' : '';
-    const checkClass = task.completed ? 'checked' : '';
+  sortedTodos.forEach(({id, description, completed}) => {
+    const checkedTodo = completed ? 'checked' : '';
+    const checkClass = completed ? 'checked' : '';
     todosHtml += `  <div class="task-item">
                               <div>
-                                  <input id="${task.id}" type="checkbox" class="task-check" ${checkedTodo} />
-                                  <input id="${task.id}" type="text" class="task-edit" ${checkClass} value="${task.description}" />
+                                  <input id="${id}" type="checkbox" class="task-check" ${checkedTodo} />
+                                  <input id="${id}" type="text" class="task-edit" ${checkClass} value="${description}" />
                               </div>
-                              <button id="${task.id}" class="remove-btn"> <i class="fas fa-trash"></i></button>
+                              <button id="${id}" class="remove-btn"> <i class="fas fa-trash"></i></button>
                           </div>
           `;
   });
